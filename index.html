@@ -91,7 +91,7 @@ body {
   font: 400 var(--step-0)/1.65 var(--body);
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 .wrap {
   max-width: 1080px; margin: 0 auto;
@@ -121,11 +121,12 @@ h1 em { font-style: italic; color: var(--navy); }
 .btn:hover { background: var(--navy); border-color: var(--navy); color: var(--paper); }
 .btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
 .portrait { margin: 0; }
-.portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(.85); }
+.portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; filter: saturate(.85); }
 .portrait figcaption { font-family: var(--mono); font-size: .72rem; color: var(--muted); margin-top: 10px; display: flex; justify-content: space-between; gap: 12px; }
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; }
-  .portrait { order: -1; max-width: 340px; }
+  .portrait { order: -1; width: min(220px, 60%); }
+  .portrait figcaption { display: none; }
 }
 
 /* Sections */
@@ -148,7 +149,7 @@ h2 { font-family: var(--display); font-weight: 500; font-size: var(--step-3); li
 .entry p { margin: 0; max-width: 60ch; }
 .venture { grid-template-columns: 150px 1fr 190px; align-items: start; }
 .logo { margin: 0; }
-.logo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 1px solid var(--rule); }
+.logo img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; border: 1px solid var(--rule); }
 @media (max-width: 760px) { .venture { grid-template-columns: 150px 1fr; } .logo { grid-column: 2; max-width: 240px; } }
 .tag { display: inline-block; font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; padding: 3px 9px; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); margin-left: 8px; vertical-align: 3px; }
 @media (max-width: 560px) { .entry, .venture { grid-template-columns: 1fr; } .logo { grid-column: auto; } }
